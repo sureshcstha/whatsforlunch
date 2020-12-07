@@ -1,0 +1,57 @@
+{% extends 'lunch/base.html' %}
+
+{% block body %}
+<br />
+
+  <div class="container field is-grouped">
+    <p class="control is-expanded has-icons-left">
+      <input class="input" type="text" placeholder="Find a restaurant">
+      <span class="icon is-large is-left">
+        <i class="fas fa-search"></i>
+      </span>
+    </p>
+    <p class="control">
+      <a class="button is-success">
+        Search
+      </a>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="columns">
+        <div class="column has-text-centered">
+          <h1 class="title" style="color: darkblue;">All Places to Eat</h1><br>
+        </div>
+      </div>
+      <div id="app" class="row columns is-multiline">
+        {% for restaurant in restaurant_object %}
+          <div class="card large">
+            <div class="card-image">
+              <figure class="image is-16by9">
+                <img src="media/{{ restaurant.image }}" alt="restaurant image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4 no-padding">{{restaurant.name}}</p>
+                  <p class="subtitle is-6">{{restaurant.type_of_food}}</p>
+                </div>
+              </div>
+              <div class="content">
+                {{restaurant.description}}
+              </div>
+            </div>
+
+          </div>
+            {% endfor %}
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock %}

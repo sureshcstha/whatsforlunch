@@ -1,0 +1,58 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="author" content="Suresh Shrestha" />
+    <title>What’s for Lunch?</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- Bulma Version 0.9.1-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<body>
+<!-- Navigation bar -->
+   <nav class="navbar is-link is-fixed-top">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{% url 'index' %}">
+        <img src="../../static/lunch/logo.png" >
+      </a>
+
+      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="{% url 'index' %}">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+          <span>Home</span>
+        </a>
+      </div>
+      <div class="navbar-end">
+        <a class="navbar-item" href="{% url 'restaurant_list' %}">
+          <span class="icon">
+            <i class="fas fa-utensils"></i>
+          </span>
+          <span>See all places</span>
+        </a>
+        <a class="navbar-item" href="{% url 'add_restaurant' %}">
+          <span class="icon">
+            <i class="fas fa-pen"></i>
+          </span>
+          <span>Add a place to eat</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+<br>
+
+<br>
+
+{% block body %}
+{% endblock %}
+</body>
+</html>

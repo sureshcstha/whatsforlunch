@@ -1,0 +1,91 @@
+{% extends 'lunch/base.html' %}
+
+{% block body %}
+
+  <!-- About -->
+  <section class="section" id="about">
+    <!-- Title -->
+    <div class="section-heading">
+      <h3 class="title is-2">{{ name }}</h3>
+        <p class="is-size-4"> {{ description }}</p>
+    </div>
+    <br />
+
+    <div class="columns has-same-height is-gapless">
+      <div class="column">
+        <!-- Profile -->
+        <div class="card">
+          <div class="card-content">
+            <h3 class="title is-4">Details</h3>
+
+            <div class="content">
+              <table class="table-profile">
+                <tr>
+                  <th colspan="1"></th>
+                  <th colspan="2"></th>
+                </tr>
+                <tr>
+                  <td>Address: </td>
+                  <td>{{ address }}</td>
+                </tr>
+                <tr>
+                  <td>Types of food: </td>
+                  <td>{{ type_of_food }}</td>
+                </tr>
+                <tr>
+                  <td>Affordability: </td>
+                  <td>{{ affordability }}</td>
+                </tr>
+                <tr>
+                  <td>Phone:</td>
+                  <td>{{ phone }}</td>
+                </tr>
+                <tr>
+                  <td>Website: </td>
+                  <td>{{ website }}</td>
+                </tr>
+
+                <tr>
+                  <td>Dine-in: </td>
+                  <td>{{ dine_in }}</td>
+                </tr>
+                <tr>
+                  <td>Takeout: </td>
+                  <td>{{ take_out }}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="buttons has-addons is-centered">
+              <a href="#" class="button is-danger">Give Me Another</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <!-- Profile picture -->
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://source.unsplash.com/random/1280x960" alt="restaurant image">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <!-- Skills -->
+        <div class="card">
+          <div class="card-content skills-content">
+            <h3 class="title is-4">Google Maps</h3>
+            <div class="map-responsive">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.700285748082!2d-111.9501922846202!3d41.18470387928327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x875308aa4660d0e7%3A0x34075676fef07ac3!2sThe%20Pie%20Pizzeria%20-%20Ogden!5e0!3m2!1sen!2sus!4v1607276851194!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
