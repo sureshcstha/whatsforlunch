@@ -6,7 +6,10 @@ from django.core.paginator import Paginator
 
 # Create your views here.
 def index(request):
-    context = {}
+    restaurant = Restaurant.objects.all().last()
+    context = {
+        'restaurant': restaurant
+    }
     return render(request, 'lunch/index.html', context)
 
 
