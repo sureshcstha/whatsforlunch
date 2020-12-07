@@ -26,27 +26,28 @@
       </div>
       <div id="app" class="row columns is-multiline">
         {% for restaurant in restaurant_object %}
-          <div class="card large">
-            <div class="card-image">
-              <figure class="image is-16by9">
-                <img src="media/{{ restaurant.image }}" alt="restaurant image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <p class="title is-4 no-padding">{{restaurant.name}}</p>
-                  <p class="subtitle is-6">{{restaurant.type_of_food}}</p>
+          <div class="column is-4">
+            <div class="card large">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="{{ restaurant.image.url }}" alt="restaurant image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4 no-padding">{{restaurant.name}}</p>
+                    <p class="subtitle is-6">{{restaurant.type_of_food}}</p>
+                  </div>
+                </div>
+                <div class="content">
+                  {{restaurant.description}}
                 </div>
               </div>
-              <div class="content">
-                {{restaurant.description}}
-              </div>
             </div>
-
           </div>
-            {% endfor %}
-        </div>
+        {% endfor %}
+      </div>
 
       </div>
 
