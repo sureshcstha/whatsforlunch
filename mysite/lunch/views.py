@@ -2,13 +2,15 @@ from django.shortcuts import render, redirect
 from .models import Restaurant
 from .forms import RestaurantForm
 from django.core.paginator import Paginator
+import random
 
 
 # Create your views here.
 def index(request):
-    restaurant = Restaurant.objects.all().last()
+    restaurant = Restaurant.objects.all()
+    random_item = random.choice(restaurant)
     context = {
-        'restaurant': restaurant
+        'restaurant': random_item
     }
     return render(request, 'lunch/index.html', context)
 
