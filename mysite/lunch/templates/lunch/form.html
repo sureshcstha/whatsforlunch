@@ -15,7 +15,7 @@
     <h2>Add a place to eat</h2>
     <div class="row">
         <div class="col-md-7">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="">Name</label>
@@ -35,7 +35,12 @@
                 </div>
                 <div class="form-group">
                     <label for="">Affordability</label>
-                    <input type="text" class="form-control" id="affordability" name="affordability">
+                        <select name="affordability" id="affordability">
+                            <option value="Cheap">Cheap</option>
+                            <option value="Won’t break the bank">Won’t break the bank</option>
+                            <option value="Expensive">Expensive</option>
+                            <option value="Crazy expensive">Crazy expensive</option>
+                        </select>
                 </div>
                 <div class="form-group">
                     <label for="">Phone</label>
@@ -47,11 +52,17 @@
                 </div>
                 <div class="form-group">
                     <label for="">Dine-in</label>
-                    <input type="text" class="form-control" id="dine_in" name="dine_in">
+                      <select name="dine_in" id="dine_in">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
                 </div>
                 <div class="form-group">
                     <label for="">Takeout</label>
-                    <input type="text" class="form-control" id="take_out" name="take_out">
+                        <select name="take_out" id="take_out">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
                 </div>
                 <div class="form-group">
                     <label for="">Google Maps Code</label>

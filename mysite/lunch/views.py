@@ -28,7 +28,7 @@ def add_restaurant(request):
         dine_in = request.POST.get('dine_in', '')
         take_out = request.POST.get('take_out', '')
         google_maps_code = request.POST.get('google_maps_code', '')
-        image = request.POST.get('image', '')
+        image = request.FILES.get('image', '')
         restaurant = Restaurant(name=name, description=description, address=address, type_of_food=type_of_food,
                                 affordability=affordability, phone=phone, website=website, dine_in=dine_in,
                                 take_out=take_out, google_maps_code=google_maps_code, image=image)

@@ -1,18 +1,5 @@
 from django.db import models
 
-AFFORDABILITY_CHOICES = [
-    ('affordability1', 'Cheap'),
-    ('affordability2', 'Won’t break the bank'),
-    ('affordability3', 'Expensive'),
-    ('affordability4', 'Crazy expensive'),
-    ]
-
-
-YES_NO_CHOICES = [
-    ('yes', 'Yes'),
-    ('no', 'No'),
-    ]
-
 
 # Create your models here.
 class Restaurant (models.Model):
