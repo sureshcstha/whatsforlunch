@@ -12,7 +12,7 @@
 <!-- Navigation bar -->
    <nav class="navbar is-link is-fixed-top">
     <div class="navbar-brand">
-      <a class="navbar-item" href="{% url 'index' %}">
+      <a class="navbar-item" href="{% url 'about' %}">
         <img src="../../static/lunch/logo.png" >
       </a>
 
@@ -30,6 +30,12 @@
             <i class="fas fa-home"></i>
           </span>
           <span>Home</span>
+        </a>
+        <a class="navbar-item" href="{% url 'about' %}">
+          <span class="icon">
+            <i class="fas fa-info"></i>
+          </span>
+          <span>About</span>
         </a>
       </div>
       <div class="navbar-end">
@@ -52,5 +58,18 @@
 
 {% block body %}
 {% endblock %}
+
+  <!-- javascript for responsive navigation bar -->
+  <script type="text/javascript">
+    (function() {
+      var burger = document.querySelector('.burger');
+      var nav = document.querySelector('#'+ burger.dataset.target);
+
+      burger.addEventListener('click', function(){
+        burger.classList.toggle('is-active');
+        nav.classList.toggle('is-active');
+      })
+    })();
+  </script>
 </body>
 </html>

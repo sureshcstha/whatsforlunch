@@ -14,6 +14,11 @@ def index(request):
     return render(request, 'lunch/index.html', context)
 
 
+def about(request):
+    context = {}
+    return render(request, 'lunch/about.html', context)
+
+
 def restaurant_list(request):
     restaurant_object = Restaurant.objects.all()
     restaurant_name = request.GET.get('restaurant_name')
