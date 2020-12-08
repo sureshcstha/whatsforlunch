@@ -4,25 +4,29 @@
 <br />
 <br />
 
-  <div class="container field is-grouped">
-    <p class="control is-expanded has-icons-left">
-      <input class="input" type="text" placeholder="Find a restaurant">
-      <span class="icon is-large is-left">
-        <i class="fas fa-search"></i>
-      </span>
-    </p>
-    <p class="control">
-      <a class="button is-success">
-        Search
-      </a>
-    </p>
+<form action="" method="GET">
+  <div class="column is-6 is-offset-3">
+    <div class="box">
+      <div class="container field is-grouped">
+        <p class="control is-expanded has-icons-left">
+          <input class="input" type="search" name="restaurant_name" placeholder="Find a restaurant">
+          <span class="icon is-large is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </p>
+        <p class="control">
+          <button class="button is-success" type="submit">Search</button>
+        </p>
+      </div>
+    </div>
   </div>
+</form>
 
   <div class="container">
     <div class="section">
       <div class="columns">
         <div class="column has-text-centered">
-          <h1 class="title" style="color: darkblue;">Places to eat near you</h1><br>
+          <h1 class="title" style="color: darkblue;">Places to eat near you</h1><br />
         </div>
       </div>
       <div id="app" class="row columns is-multiline">
@@ -54,6 +58,21 @@
 
     </div>
   </div>
+
+<div class="container" align="center">
+{% if restaurant_object.has_previous %}
+    <a href="?page=1" class="button is-danger is-small">First</a>
+    <a href="?page={{ restaurant_object.previous_page_number }}" class="button is-danger is-small">&#60;&#60; Previous</a>
+{% endif %}
+
+Page: {{ restaurant_object.number }} of {{ restaurant_object.paginator.num_pages }}
+
+{% if restaurant_object.has_next %}
+    <a href="?page={{ restaurant_object.next_page_number }}" class="button is-danger is-small">Next &#62;&#62;</a>
+    <a href="?page={{ restaurant_object.paginator.num_pages }}" class="button is-danger is-small">Last</a>
+{% endif %}
+</div>
+<br>
 
 
 {% endblock %}

@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import Restaurant
-from .forms import RestaurantForm
 from django.core.paginator import Paginator
 import random
 
@@ -17,7 +16,14 @@ def index(request):
 
 def restaurant_list(request):
     restaurant_object = Restaurant.objects.all()
+    restaurant_name = request.GET.get('restaurant_name')
 
+    if restaurant_name != '' and restaurant_name is not None:
+        restaurant_object = restaurant_object.filter(name__icontains=restaurant_name)
+
+    paginator = Paginator(restaurant_object, 9)
+    page = request.GET.get('page')
+    restaurant_object = paginator.get_page(page)
     return render(request, 'lunch/restaurant_list.html', {'restaurant_object': restaurant_object})
 
 
