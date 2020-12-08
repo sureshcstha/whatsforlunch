@@ -18,7 +18,6 @@ class Restaurant (models.Model):
     dine_in = models.CharField(max_length=50)
     take_out = models.CharField(max_length=50)
     google_maps_code = models.CharField(max_length=500)
-    #google_maps_code = urllib.parse.quote(google_maps_code)
     image = models.ImageField(upload_to='images', default='images/none/noimg.jpg')
 
 
