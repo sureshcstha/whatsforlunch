@@ -41,7 +41,8 @@
               <div class="card-content">
                 <div class="media">
                   <div class="media-content">
-                    <p class="title is-4 no-padding">{{restaurant.name}}</p>
+                    <p class="title is-4 no-padding"><a href="{% url 'detail' restaurant.id %}">{{ restaurant.name }}</a></p>
+
                     <p class="subtitle is-6">{{restaurant.type_of_food}}</p>
                   </div>
                 </div>

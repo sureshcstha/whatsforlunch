@@ -12,31 +12,31 @@
                 <div class="field">
                     <label for="">Name</label>
                     <div class="control">
-                        <input type="text" class="input" id="name" name="name">
+                        <input type="text" class="input is-danger" id="name" name="name">
                     </div>
                 </div>
                 <div class="field">
                     <label for="">Description</label>
                       <div class="control">
-                        <textarea class="textarea" rows="3" id="description" name="description"></textarea>
+                        <textarea class="textarea is-danger" rows="3" id="description is-danger" name="description"></textarea>
                       </div>
                 </div>
                 <div class="field">
                     <label for="">Address</label>
                     <div class="control">
-                        <input type="text" class="input" id="address" name="address">
+                        <input type="text" class="input is-danger" id="address" name="address">
                     </div>
                 </div>
                 <div class="field">
                     <label for="">Types of food</label>
                     <div class="control">
-                        <input type="text" class="input" id="type_of_food" name="type_of_food">
+                        <input type="text" class="input is-danger" id="type_of_food" name="type_of_food">
                     </div>
                 </div>
                 <div class="field">
                     <label for="">Affordability</label>
-                      <div class="control is-expanded">
-                          <div class="select is-fullwidth">
+                      <div class="control is-expanded ">
+                          <div class="select is-fullwidth is-danger">
                             <select name="affordability" id="affordability">
                                 <option value="Cheap">Cheap</option>
                                 <option selected value="Won’t break the bank">Won’t break the bank</option>
@@ -49,19 +49,19 @@
                 <div class="field">
                     <label for="">Phone</label>
                     <div class="control">
-                        <input type="tel" class="input" id="phone" name="phone">
+                        <input type="tel" class="input is-danger" id="phone" name="phone">
                     </div>
                 </div>
                 <div class="field">
                     <label for="">Website</label>
                     <div class="control">
-                        <input type="text" class="input" id="website" name="website">
+                        <input type="text" class="input is-danger" id="website" name="website">
                     </div>
                 </div>
                 <div class="field">
                     <label for="">Dine-in</label>
                         <div class="control is-expanded">
-                          <div class="select is-fullwidth">
+                          <div class="select is-fullwidth is-danger">
                               <select name="dine_in" id="dine_in">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -72,7 +72,7 @@
                 <div class="field">
                     <label for="">Delivery</label>
                         <div class="control is-expanded">
-                          <div class="select is-fullwidth">
+                          <div class="select is-fullwidth is-danger">
                             <select name="take_out" id="take_out">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -83,19 +83,25 @@
                 <div class="field">
                     <label for="">Google Maps Code</label>
                     <div class="control">
-                        <textarea class="textarea is-small"  id="google_maps_code" name="google_maps_code"></textarea>
+                        <textarea class="textarea is-small is-danger"  id="google_maps_code" name="google_maps_code"></textarea>
                     </div>
                 </div>
                 <div class="field">
                      <label for="">Image</label>
                     <div class="control">
-                        <input type="file" class="input" id="image" name="image">
+                        <input type="file" class="input is-danger" id="image" name="image">
                     </div>
                 </div>
                 <button type="submit" class="button is-danger">
                     SUBMIT&nbsp;&nbsp;
                     <i class="fas fa-paper-plane"></i>
                 </button>
+
+                <button type="reset" class="button is-info">
+                    Cancel&nbsp;&nbsp;
+                    <i class="fas fa-times"></i>
+                </button>
+
             </form>
         </div>
     </div>

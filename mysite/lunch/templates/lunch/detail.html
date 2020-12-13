@@ -1,0 +1,98 @@
+{% extends 'lunch/base.html' %}
+
+{% block body %}
+
+  <!-- About -->
+  <section class="section" id="about">
+    <!-- Title -->
+    <div class="section-heading">
+      <h3 class="title is-2">{{ restaurant.name }}</h3>
+        <p class="is-size-4"> {{ restaurant.description }}</p>
+    </div>
+    <br />
+
+    <div class="columns has-same-height is-gapless">
+      <div class="column">
+        <!-- Profile -->
+        <div class="card">
+          <div class="card-content">
+            <h3 class="title is-4">Details</h3>
+
+            <div class="content">
+              <table class="table-profile">
+                <tr>
+                  <th colspan="1"></th>
+                  <th colspan="2"></th>
+                </tr>
+                <tr>
+                  <td>Address: </td>
+                  <td>{{ restaurant.address }}</td>
+                </tr>
+                <tr>
+                  <td>Types of food: </td>
+                  <td>{{ restaurant.type_of_food }}</td>
+                </tr>
+                <tr>
+                  <td>Affordability: </td>
+                  <td>{{ restaurant.affordability }}</td>
+                </tr>
+                <tr>
+                  <td>Phone:</td>
+                  <td>{{ restaurant.phone }}</td>
+                </tr>
+                <tr>
+                  <td>Website: </td>
+                  <td>{{ restaurant.website }}</td>
+                </tr>
+
+                <tr>
+                  <td>Dine-in: </td>
+                  <td>{{ restaurant.dine_in }}</td>
+                </tr>
+                <tr>
+                  <td>Delivery: </td>
+                  <td>{{ restaurant.take_out }}</td>
+                </tr>
+              </table>
+            </div>
+            <div class="buttons has-addons is-centered">
+              <a href="{% url 'update_restaurant' restaurant.id %}" class="button is-info">
+                Edit&nbsp;&nbsp;
+                <i class="fas fa-edit"></i>
+              </a>
+                <p class="ml-4"></p>
+              <a href="{% url 'delete_restaurant' restaurant.id %}" class="button is-danger">
+                Delete&nbsp;&nbsp;
+                <i class="fas fa-trash-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <!-- Profile picture -->
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="{{ restaurant.image.url }}" alt="restaurant image">
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <!-- Skills -->
+        <div class="card">
+          <div class="card-content skills-content">
+            <h3 class="title is-4">Google Maps</h3>
+            <div class="map-responsive">
+              <iframe src={{ restaurant.google_maps_code }} width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

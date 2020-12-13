@@ -1,0 +1,17 @@
+{% extends 'lunch/base.html' %}
+
+{% block body %}
+<br />
+    <section class="section">
+        <div class="container has-text-centered column is-8 is-offset-2">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="block column is-6 is-offset-3"><img class="is-3by2 mb-1" src="{{ restaurant.image.url }}" alt=""></div>
+                <h2 class="is-size-4">Are you sure you want to delete the restaurant <strong>{{ restaurant.name }}?</strong></h2>
+                <br />
+                <button type="submit" class="button is-danger">Confirm</button>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

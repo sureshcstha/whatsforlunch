@@ -23,6 +23,9 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('about/', views.about, name="about"),
     path('restaurants/', views.restaurant_list, name="restaurant_list"),
+    path('restaurants/<int:restaurant_id>', views.detail, name="detail"),
     path('add/', views.add_restaurant, name="add_restaurant"),
+    path('update/<int:id>', views.update_restaurant, name="update_restaurant"),
+    path('delete/<int:id>', views.delete_restaurant, name="delete_restaurant"),
     path('admin/', admin.site.urls),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
