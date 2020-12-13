@@ -12,25 +12,25 @@
                 <div class="field">
                     <label for="">Name</label>
                     <div class="control">
-                        <input type="text" class="input is-danger" id="name" name="name">
+                        <input type="text" class="input is-danger" id="name" name="name" value="{{ restaurant.name }}">
                     </div>
                 </div>
                 <div class="field">
                     <label for="">Description</label>
                       <div class="control">
-                        <textarea class="textarea is-danger" rows="3" id="description is-danger" name="description"></textarea>
+                        <textarea class="textarea is-danger" rows="3" id="description is-danger" name="description" >{{ restaurant.description }}</textarea>
                       </div>
                 </div>
                 <div class="field">
                     <label for="">Address</label>
                     <div class="control">
-                        <input type="text" class="input is-danger" id="address" name="address">
+                        <input type="text" class="input is-danger" id="address" name="address" value="{{ restaurant.address }}">
                     </div>
                 </div>
                 <div class="field">
                     <label for="">Types of food</label>
                     <div class="control">
-                        <input type="text" class="input is-danger" id="type_of_food" name="type_of_food">
+                        <input type="text" class="input is-danger" id="type_of_food" name="type_of_food" value="{{ restaurant.type_of_food }}">
                     </div>
                 </div>
                 <div class="field">
@@ -39,9 +39,21 @@
                           <div class="select is-fullwidth is-danger">
                             <select name="affordability" id="affordability">
                                 <option value="Cheap">Cheap</option>
-                                <option selected value="Won’t break the bank">Won’t break the bank</option>
+                                {% if restaurant.affordability == "Won’t break the bank"%}
+                                <option value="Won’t break the bank" selected>Won’t break the bank</option>
+                                {% else %}
+                                <option value="Won’t break the bank">Won’t break the bank</option>
+                                {% endif %}
+                                {% if restaurant.affordability == "Expensive"%}
+                                <option value="Expensive" selected>Expensive</option>
+                                {% else %}
                                 <option value="Expensive">Expensive</option>
+                                {% endif %}
+                                {% if restaurant.affordability == "Crazy expensive"%}
+                                <option value="Crazy expensive" selected>Crazy expensive</option>
+                                {% else %}
                                 <option value="Crazy expensive">Crazy expensive</option>
+                                {% endif %}
                             </select>
                           </div>
                       </div>
@@ -49,13 +61,13 @@
                 <div class="field">
                     <label for="">Phone</label>
                     <div class="control">
-                        <input type="tel" class="input is-danger" id="phone" name="phone">
+                        <input type="tel" class="input is-danger" id="phone" name="phone" value="{{ restaurant.phone }}">
                     </div>
                 </div>
                 <div class="field">
                     <label for="">Website</label>
                     <div class="control">
-                        <input type="text" class="input is-danger" id="website" name="website">
+                        <input type="text" class="input is-danger" id="website" name="website" value="{{ restaurant.website }}">
                     </div>
                 </div>
                 <div class="field">
@@ -64,7 +76,11 @@
                           <div class="select is-fullwidth is-danger">
                               <select name="dine_in" id="dine_in">
                                 <option value="Yes">Yes</option>
+                                {% if restaurant.dine_in == "No"%}
+                                <option value="No" selected>No</option>
+                                {% else %}
                                 <option value="No">No</option>
+                                {% endif %}
                               </select>
                           </div>
                     </div>
@@ -75,7 +91,11 @@
                           <div class="select is-fullwidth is-danger">
                             <select name="take_out" id="take_out">
                                 <option value="Yes">Yes</option>
+                                {% if restaurant.take_out == "No"%}
+                                <option value="No" selected>No</option>
+                                {% else %}
                                 <option value="No">No</option>
+                                {% endif %}
                             </select>
                           </div>
                     </div>
@@ -83,13 +103,13 @@
                 <div class="field">
                     <label for="">Google Maps Code</label>
                     <div class="control">
-                        <textarea class="textarea is-small is-danger"  id="google_maps_code" name="google_maps_code"></textarea>
+                        <textarea class="textarea is-small is-danger"  id="google_maps_code" name="google_maps_code" >{{ restaurant.google_maps_code }}</textarea>
                     </div>
                 </div>
                 <div class="field">
                      <label for="">Image</label>
                     <div class="control">
-                        <input type="file" class="input is-danger" id="image" name="image">
+                        <input type="file" class="input is-danger" id="image" name="image" value="{{ restaurant.image }}">
                     </div>
                 </div>
                 <button type="submit" class="button is-danger">
